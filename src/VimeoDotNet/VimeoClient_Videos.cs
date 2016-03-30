@@ -172,7 +172,7 @@ namespace VimeoDotNet
             return await GetUserVideosAsync(userId, null, null, query);
         }
 
-        public async Task<Paginated<Video>> GetUserVideosAsync(long userId, int? page, int? perPage, string query = null)
+        public async Task<Paginated<Video>> GetUserVideosAsync(long? userId, int? page, int? perPage, string query = null)
         {
             try
             {

@@ -243,7 +243,7 @@ namespace VimeoDotNet
             return GetUserVideos(userId, null, null, query);
         }
 
-        public Paginated<Video> GetUserVideos(long userId, int? page, int? perPage, string query = null)
+        public Paginated<Video> GetUserVideos(long? userId, int? page, int? perPage, string query = null)
         {
             try
             {
@@ -452,5 +452,6 @@ namespace VimeoDotNet
         }
 
         #endregion
+
     }
 }

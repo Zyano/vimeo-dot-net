@@ -93,5 +93,6 @@ namespace VimeoDotNet
 		// Deleting Videos
 		void DeleteVideo(long clipId);
 		Task DeleteVideoAsync(long clipId);
+
     }
 }
