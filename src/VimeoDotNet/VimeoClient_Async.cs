@@ -166,7 +166,7 @@ namespace VimeoDotNet
 			return await ExecuteApiRequest<User>(request);
         }
 
-		#endregion
+        #endregion
 
 		#region Albums
 

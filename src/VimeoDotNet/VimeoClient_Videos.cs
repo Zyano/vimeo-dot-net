@@ -245,6 +245,21 @@ namespace VimeoDotNet
             }
         }
 
+        public async Task<Paginated<Video>> GetVideosAsync(string query, int? page = null, int? perPage = null ) {
+            try {
+                IApiRequest request = GenerateVideosRequest(page: page, perPage: perPage);
+                IRestResponse<Paginated<Video>> response = await request.ExecuteRequestAsync<Paginated<Video>>();
+                CheckStatusCodeError(response, "Error retrieving account videos.");
+
+                return response.Data;
+            } catch(Exception ex) {
+                if(ex is VimeoApiException) {
+                    throw;
+                }
+                throw new VimeoApiException("Error retrieving account videos.", ex);
+            }
+        }
+
         public async Task UpdateVideoMetadataAsync(long clipId, VideoUpdateMetadata metaData)
         {
             try

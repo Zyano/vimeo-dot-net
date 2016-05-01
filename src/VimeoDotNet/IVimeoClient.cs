@@ -24,7 +24,8 @@ namespace VimeoDotNet
 		// ...for current account
         Paginated<Video> GetVideos();
         Task<Paginated<Video>> GetVideosAsync(int? page, int? perPage);
-		// ...for another acount
+        Task<Paginated<Video>> GetVideosAsync(string query, int? page, int? perPage);
+        // ...for another acount
         Video GetUserVideo(long userId, long clipId);
         Task<Video> GetUserVideoAsync(long userId, long clipId);
         Paginated<Video> GetUserVideos(long userId, string query = null);
